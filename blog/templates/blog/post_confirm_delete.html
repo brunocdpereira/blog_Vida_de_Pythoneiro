@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Excluir artigo</title>
+
+</head>
+
+<body>
+
+    <h1>Excluir artigo</h1>
+
+    <p>
+        Tem certeza que deseja excluir:
+    </p>
+
+    <h2>{{ post.titulo }}</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <button type="submit">
+            Sim, excluir
+        </button>
+
+        <a href="{% url 'home' %}">
+            Cancelar
+        </a>
+
+    </form>
+
+</body>
+
+</html>

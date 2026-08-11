@@ -1,0 +1,105 @@
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn-novo {
+    background-color: #2563eb;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-novo:hover {
+    background-color: #1d4ed8;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    flex-wrap: wrap;
+}
+
+.btn-like {
+    color: #166534;
+    background-color: #dcfce7;
+}
+
+.btn-dislike {
+    color: #991b1b;
+    background-color: #fee2e2;
+}
+
+.btn-editar {
+    color: #1e40af;
+    background-color: #dbeafe;
+}
+
+.btn-deletar {
+    color: #991b1b;
+    background-color: #f3f4f6;
+}
+
+.form-post {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-post p {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-post input,
+.form-post textarea {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-post textarea {
+    resize: vertical;
+}
+
+.btn-publicar {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-voltar {
+    background-color: #e5e7eb;
+    color: #374151;
+    margin-left: 8px;
+}
+footer {
+margin-top: 50px;
+padding: 25px;
+text-align: center;
+background-color: #1f2937;
+color: white;
+}
+
+footer a {
+color: #60a5fa;
+text-decoration: none;
+font-weight: bold;
+}
+
+footer a:hover {
+text-decoration: underline;
+}

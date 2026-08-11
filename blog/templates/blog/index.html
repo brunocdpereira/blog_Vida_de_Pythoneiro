@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Meu Blog</title>
+
+<link
+    rel="stylesheet"
+    href="{% static 'blog/style.css' %}"
+>
+
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>Meu Blog</h1>
+
+    <p>Bem-vindo ao blog "Vida de Pythoneiro"</p>
+
+    <a
+        href="{% url 'criar_post' %}"
+        class="btn btn-novo"
+    >
+        + Novo artigo
+    </a>
+
+</header>
+
+<main>
+
+    {% for post in posts %}
+
+        <article class="post">
+
+            <h2>{{ post.titulo }}</h2>
+
+            <p class="autor">
+                Publicado por {{ post.autor }}
+            </p>
+
+            <p>
+                <a
+                    class="email"
+                    href="mailto:{{ post.email }}"
+                >
+                    {{ post.email }}
+                </a>
+            </p>
+
+            <div class="conteudo">
+                {{ post.conteudo|linebreaks }}
+            </div>
+
+            <div class="acoes">
+
+                <a
+                    href="{% url 'like_post' post.id %}"
+                    class="btn btn-like"
+                >
+                    👍 Like {{ post.likes }}
+                </a>
+
+                <a
+                    href="{% url 'dislike_post' post.id %}"
+                    class="btn btn-dislike"
+                >
+                    👎 Dislike {{ post.dislikes }}
+                </a>
+
+                <a
+                    href="{% url 'editar_post' post.id %}"
+                    class="btn btn-editar"
+                >
+                    ✏️ Editar
+                </a>
+
+                <a
+                    href="{% url 'deletar_post' post.id %}"
+                    class="btn btn-deletar"
+                >
+                    🗑️ Excluir
+                </a>
+
+            </div>
+
+        </article>
+
+    {% empty %}
+
+        <article class="post">
+
+            <h2>Nenhum artigo publicado</h2>
+
+            <p>
+                Ainda não existem artigos no blog.
+            </p>
+
+            <a
+                href="{% url 'criar_post' %}"
+                class="btn btn-novo"
+            >
+                + Criar primeiro artigo
+            </a>
+
+        </article>
+
+    {% endfor %}
+
+</main>
+
+<footer>
+    <p>
+        DevBy:
+        <strong>Bruno Pereira</strong>
+        |
+        <a
+            href="https://wa.me/5518997957724?text=Olá!%20Quero%20falar%20sobre%20o%20blog."
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Falar sobre o blog
+        </a>
+    </p>
+</footer>
+
+</body>
+
+</html>

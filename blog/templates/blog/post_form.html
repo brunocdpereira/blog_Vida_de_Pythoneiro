@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% if post %}
+        Editar artigo
+        {% else %}
+        Novo artigo
+        {% endif %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            {% if post %}
+            Editar artigo
+            {% else %}
+            Novo artigo
+            {% endif %}
+        </h1>
+
+        <p>Bem-vindo ao blog "Vida de Pythoneiro"</p>
+
+    </header>
+
+
+    <main>
+
+        <form method="POST" class="form-post">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+
+            <button type="submit" class="btn btn-publicar">
+
+                {% if post %}
+                Salvar alterações
+                {% else %}
+                Publicar artigo
+                {% endif %}
+
+            </button>
+
+
+            <a href="{% url 'home' %}" class="btn btn-voltar">
+                Cancelar
+            </a>
+
+        </form>
+
+    </main>
+
+<footer>
+    <p>
+        DevBy:
+        <strong>Bruno Pereira</strong>
+        |
+        <a
+            href="https://wa.me/5518997957724?text=Olá!%20Quero%20falar%20sobre%20o%20blog."
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Falar sobre o blog
+        </a>
+    </p>
+</footer>
+
+</body>
+
+</html>
